@@ -1,50 +1,65 @@
-API de Autenticação com JWT, Prisma e MongoDB
-API simples de autenticação, com cadastro, login e listagem de usuários protegida por JWT.
+# API de Autenticação com JWT, Prisma e MongoDB
 
-🚀 Tecnologias
-Node.js + Express;
-MongoDB + Prisma ORM;
-JWT para autenticação;
-Bcrypt para criptografia de senhas.
+Uma API simples de autenticação que permite cadastro, login e listagem de usuários protegida por JWT.
 
+## 🚀 Tecnologias
 
-⚙️ Como rodar o projeto
-Clone o repositório:
-bash
-Copiar
-Editar
+Este projeto utiliza as seguintes tecnologias:
+
+- **Node.js** + **Express** - Para a estrutura do servidor;
+- **MongoDB** + **Prisma ORM** - Para o banco de dados;
+- **JWT** - Para autenticação segura;
+- **Bcrypt** - Para criptografia de senhas.
+
+## ⚙️ Como rodar o projeto
+
+### 1️⃣ Clone o repositório
+
+```bash
 git clone https://github.com/luanrrsouza/ApiComAutenticacao.git
 cd ApiComAutenticacao
-Instale as dependências:
-bash
-Copiar
-Editar
+```
+
+### 2️⃣ Instale as dependências
+
+```bash
 npm install
-Configure o arquivo .env (exemplo abaixo):
-env
-Copiar
-Editar
+```
+
+### 3️⃣ Configure o arquivo `.env`
+
+Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
+
+```env
 DATABASE_URL="sua_string_de_conexao_mongodb"
 JWT_SECRET="sua_chave_secreta"
-Gere o Prisma Client:
-bash
-Copiar
-Editar
+```
+
+### 4️⃣ Gere o Prisma Client
+
+```bash
 npx prisma generate
-Rode o projeto:
-bash
-Copiar
-Editar
+```
+
+### 5️⃣ Rode o projeto
+
+```bash
 npm run dev
-🔑 Rotas
-Método	Rota	Protegida	Descrição
-POST	/register	❌	Cadastro de usuário
-POST	/login	❌	Login e geração de token
-GET	/users	✅	Listar usuários cadastrados
-✅ Exemplo de login
-http
-Copiar
-Editar
+```
+
+## 🔑 Rotas Disponíveis
+
+| Método | Rota      | Protegida | Descrição                   |
+|---------|-----------|------------|--------------------------------|
+| `POST`  | `/register` | ❌         | Cadastro de usuário           |
+| `POST`  | `/login`   | ❌         | Login e geração de token    |
+| `GET`   | `/users`   | ✅         | Listagem de usuários cadastrados |
+
+## ✅ Exemplo de Login
+
+### 🔹 Requisição
+
+```http
 POST /login
 Content-Type: application/json
 
@@ -52,11 +67,17 @@ Content-Type: application/json
   "email": "email@exemplo.com",
   "password": "123456"
 }
-Resposta:
+```
 
-json
-Copiar
-Editar
+### 🔹 Resposta
+
+```json
 {
   "token": "seu_token_jwt_aqui"
 }
+```
+
+---
+
+Feito com ❤️ por [Luan Souza](https://github.com/luanrrsouza).
+
