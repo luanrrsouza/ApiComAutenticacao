@@ -79,5 +79,5 @@ Content-Type: application/json
 
 ---
 
-Feito com ❤️ por [Luan Souza](https://github.com/luanrrsouza).
+
 
